@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Show resume added</title>
+    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Result</h1>
+<p>You did successfully add your Experience in our database</p>
+
+
+<h2>Expereince</h2>
+<p th:text="'Title:'+ ${newexperience.title}"/>
+<p th:text="'Your organization:'+ ${newexperience.organization}"/>
+<p th:text="'Your start time:'+ ${newexperience.startTime}" />
+<p th:text="'Your end time:'+ ${newexperience.endTime}"/>
+<p th:text="'Your duty 1:'+ ${newexperience.duty1}"/>
+<p th:text="'Your duty 2:'+ ${newexperience.duty2}" />
+
+
+</body>
+</html>

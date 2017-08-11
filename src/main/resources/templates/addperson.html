@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8" />
+</head>
+<body>
+<p>This is where you add your information.</p>
+
+<h1>Basic Information</h1>
+<form action = "#" th:action="@{/addperson}" th:object="${newperson}" method="post">
+
+    <span th:if="${#fields.hasErrors('name')}" th:error="*{name}">Name is required</span>
+    <p>Enter your Name: <input type="text" th:field="*{name}" /></p>
+
+    <span th:if="${#fields.hasErrors('email')}" th:error="*{email}">Email has error</span>
+    <p>Enter your Email Address: <input type="text" th:field="*{email}" /></p>
+
+    <p><input type="submit" value="Add the profile" /><input type="reset" value="Reset" /></p>
+
+</form>
+
+
+
+</body>
+</html>

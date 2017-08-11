@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form Submission</title>
+    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8" />
+</head>
+<body>
+<p>This is where you add your resume.</p>
+
+<h1>Skills</h1>
+<form action = "#" th:action="@{/addskill}" th:object="${newskill}" method="post">
+
+    <span th:if="${#fields.hasErrors('skillname')}" th:error="*{skillname}">Skill name is required</span>
+    <p>Enter your skill: <input type="text" th:field="*{skillname}" /></p>
+
+    <span th:if="${#fields.hasErrors('skillrating')}" th:error="*{skillrating}">Skill rating is required</span>
+    <p>Enter your skill rating: <input type="text" th:field="*{skillrating}" /></p>
+
+    <p><input type="submit" value="Add the skill" /> <input type="reset" value="Reset" /></p>
+
+</form>
+
+</body>
+</html>

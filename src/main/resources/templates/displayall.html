@@ -5,35 +5,45 @@
     <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8"/>
 </head>
 <body>
-<h1>Result</h1>
+
 <p>You did successfully add your resume in our database</p>
 
-<h2>Basic information</h2>
-<p th:each=" per : ${allper}">
-<p th:text="'Your name:'+ ${per.name}"/>
-<p th:text="'Your email:'+ ${per.email}" />
+<h2>Result</h2>
 
+<h2>Basic information</h2>
+<th:block th:each="oneper:${person}">
+    <p th:text="'Your name:'+ ${oneper.name}"/>
+    <p th:text="'Your email:'+ ${oneper.email}" />
+</th:block>
 
 <h2>Education</h2>
-<p th:each="edu : ${alledu}">
-<p th:text="'Dgreee:'+ ${edu.degree}"/>
-<p th:text="'Your University:'+ ${edu.university}"/>
-<p th:text="'Your Grduation Year:'+ ${edu.graduationYear}" />
+<th:block th:each="edu:${alledu}">
+    <p th:text="'Degreee:'+ ${edu.degree}"/>
+    <p th:text="'Your University:'+ ${edu.university}"/>
+    <p th:text="'Your Grduation Year:'+ ${edu.graduationYear}" />
+</th:block>
 
 <h2>Skills</h2>
-<p th:each="sk: ${allskill}">
-<p th:text="'Skill:'+ ${sk.skillname}"/>
-<p th:text="'Skill rating:'+ ${sk.skillrating}"/>
-
+<th:block th:each="sk:${allskill}">
+    <p th:text="'Skill:'+ ${sk.skillname}"/>
+    <p th:text="'Skill rating:'+ ${sk.skillrating}"/>
+</th:block>
 
 <h2>Expereince</h2>
-<p th:each="exp: ${allexp}">
-<p th:text="'Title:'+ ${exp.title}"/>
-<p th:text="'Your organization:'+ ${exp.organization}"/>
-<p th:text="'Your start time:'+ ${exp.startTime}" />
-<p th:text="'Your end time:'+ ${exp.endTime}"/>
-<p th:text="'Your duty 1:'+ ${exp.duty1}"/>
-<p th:text="'Your duty 2:'+ ${exp.duty2}" />
+<th:block th:each="exp:${allexp}">
+    <p th:text="'Title:'+ ${exp.title}"/>
+    <p th:text="'Your organization:'+ ${exp.organization}"/>
+    <p th:text="'Your start time:'+ ${exp.startTime}" />
+    <p th:text="'Your end time:'+ ${exp.endTime}"/>
+    <p th:text="'Your duty 1:'+ ${exp.duty1}"/>
+    <p th:text="'Your duty 2:'+ ${exp.duty2}" />
+</th:block>
+
+<div>
+    <a href="/addeducation">Add another education achievement</a><br/>
+    <a href="/addexperience">Add another experience</a><br/>
+    <a href="/addskill">Add another skill</a><br/>
+</div>
 
 </body>
 </html>

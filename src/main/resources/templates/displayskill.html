@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <title>Show resume added</title>
+    <title>Show skill added</title>
     <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8"/>
 </head>
 <body>
@@ -9,6 +9,13 @@
 <h2>Skills</h2>
 <p th:text="'Skill:'+ ${newskill.skillname}"/>
 <p th:text="'Rating:'+ ${newskill.skillrating}"/>
+
+<div>
+    <a href="/addeducation">Add an education achievement</a><br/>
+    <a href="/addexperience">Add an experience</a><br/>
+    <a href="/addskill">Add another skill</a><br/>
+    <a href="/displayall">Show your profile</a>
+</div>
 
 </body>
 </html>

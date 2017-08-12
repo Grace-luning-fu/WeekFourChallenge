@@ -38,7 +38,7 @@ public class MainController {
     @GetMapping("/addperson")
     public String addPerson(Model model)
     {
-        if(experienceRepo.count()>=1)
+        if(personRepo.count()>=1)
         {
             return "limit";
         }

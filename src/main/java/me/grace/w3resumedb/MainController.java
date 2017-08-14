@@ -32,26 +32,21 @@ public class MainController {
     @Autowired
     ExperienceRepo experienceRepo;
 
-
+    //Home page, request the user to enter their name and email first
+    //if user has entered the name, welcome he/she back and check history
     @GetMapping("/")
-    public String home()
-    {
-        return "home";
-    }
-
-    @GetMapping("/addperson")
-    public String addPerson(Model model)
+    public String addPersonandHomepage(Model model)
     {
         if(personRepo.count()>=1)
         {
-            return "limit";
+            return "welcomeback";
         }
 
         model.addAttribute("newperson", new Person());
         return "addperson";
     }
 
-    @PostMapping("/addperson")
+    @PostMapping("/")
     public String postperson(@Valid @ModelAttribute("newperson") Person person, BindingResult bindingResult)
     {
         if(bindingResult.hasErrors())
@@ -63,6 +58,8 @@ public class MainController {
         return "displayperson";
     }
 
+    //promt the user to enter education information
+    //check the entries existed in the database, if greater than 10, not more input
     @GetMapping("/addeducation")
     public String addeducationto(Model model)
     {
@@ -90,11 +87,13 @@ public class MainController {
         return "displayeducation";
     }
 
+    //promt the user to enter skill information
+    //check the entries existed in the database, if greater than 20, not more input
     @GetMapping("/addskill")
     public String addskill(Model model)
     {
 
-        if(skillRepo.count()>=10)
+        if(skillRepo.count()>=20)
         {
             return "limit";
         }
@@ -115,11 +114,13 @@ public class MainController {
         return "displayskill";
     }
 
+    //promt the user to enter experience information
+    //check the entries existed in the database, if greater than 10, not more input
     @GetMapping("/addexperience")
     public String addexperience(Model model)
     {
 
-        if(experienceRepo.count()>=20)
+        if(experienceRepo.count()>=10)
         {
             return "limit";
         }
@@ -140,23 +141,23 @@ public class MainController {
         return "displayexperience";
     }
 
-
+    //if person, skill or education is blank, will ask the user to input
     @GetMapping("/displayall")
     public String getall(Model model)
     {
         if(personRepo.count()==0)
         {
-            return "/addperson";
+            return "error";
         }
 
         if(educationRepo.count()==0)
         {
-            return "/addeducation";
+            return "error";
         }
 
         if(skillRepo.count()==0)
         {
-            return "/addskill";
+            return "error";
         }
 
 
@@ -164,7 +165,7 @@ public class MainController {
         Iterable<Person> allperson= personRepo.findAll();
         model.addAttribute("person",allperson);
 
-
+        //Get information from database, pass on to the person object
         Iterable<Education> alledu= educationRepo.findAll();
         ArrayList<Education> educa= new ArrayList<>();
         educa= (ArrayList<Education>) alledu;

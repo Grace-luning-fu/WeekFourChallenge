@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>show person added Stylish Portfolio - Start Bootstrap Theme</title>
+    <title>Stylish Portfolio - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,9 +37,11 @@
 <!-- Header -->
 <header id="top" class="header">
     <div class="text-vertical-center">
+        <h1>Welcome to the Resume database</h1>
 
     </div>
 </header>
+
 
 <!--Application section-->
 <section id="about" class="about">
@@ -47,25 +49,20 @@
         <div class="row">
             <div class="col-lg-12 text-center">
 
-                <h3>Your Skills:</h3> <br />
-                <p th:text="'Skill: '+ ${newskill.skillname}"/>
-                <p th:text="'Rating: '+ ${newskill.skillrating}"/></br><br/>
-
-
+                <h2>Oops, your profile is not complete, please enter your name, education and skill </h2>
 
                 <div>
+                    <p><a href="/" class="btn btn-dark btn-lg">Add your name</a></p>
                     <p><a href="/addeducation" class="btn btn-dark btn-lg">Add an education achievement</a></p>
                     <p><a href="/addexperience" class="btn btn-dark btn-lg">Add an experience</a></p>
                     <p><a href="/addskill" class="btn btn-dark btn-lg">Add a skill</a></p>
-                    <p><a href="/displayall" class="btn btn-dark btn-lg">Show your profile</a></p>
                 </div>
-
 
             </div>
         </div>
-        <!-- /.row -->
     </div>
     <!-- /.container -->
+
 </section>
 
 

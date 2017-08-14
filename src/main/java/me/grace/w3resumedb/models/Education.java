@@ -1,4 +1,4 @@
-package me.grace.w3resumedb;
+package me.grace.w3resumedb.models;
 
 
 import javax.persistence.Entity;
@@ -16,15 +16,15 @@ public class Education {
     private long educationId;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String degree;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String university;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=2)
     private String graduationYear;
 
 

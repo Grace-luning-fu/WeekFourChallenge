@@ -1,6 +1,10 @@
 package me.grace.w3resumedb;
 
 
+import me.grace.w3resumedb.models.Education;
+import me.grace.w3resumedb.models.Experience;
+import me.grace.w3resumedb.models.Person;
+import me.grace.w3resumedb.models.Skill;
 import me.grace.w3resumedb.repositories.EducationRepo;
 import me.grace.w3resumedb.repositories.ExperienceRepo;
 import me.grace.w3resumedb.repositories.PersonRepo;

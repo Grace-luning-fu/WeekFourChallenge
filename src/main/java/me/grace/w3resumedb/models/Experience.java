@@ -1,4 +1,4 @@
-package me.grace.w3resumedb;
+package me.grace.w3resumedb.models;
 
 
 import javax.persistence.Entity;
@@ -16,25 +16,25 @@ public class Experience {
     private long experienceId;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String title;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String organization;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String startTime;
 
     private String endTime;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String duty1;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String duty2;
 
     public long getExperienceId() {

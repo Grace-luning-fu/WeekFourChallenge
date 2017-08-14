@@ -1,4 +1,4 @@
-package me.grace.w3resumedb;
+package me.grace.w3resumedb.models;
 
 import org.hibernate.validator.constraints.Email;
 

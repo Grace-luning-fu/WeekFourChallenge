@@ -1,4 +1,4 @@
-package me.grace.w3resumedb;
+package me.grace.w3resumedb.models;
 
 
 import javax.persistence.Entity;
@@ -16,11 +16,11 @@ public class Skill {
     private long skillId;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String skillname;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=3)
     private String skillrating;
 
 

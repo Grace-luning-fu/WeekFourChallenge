@@ -1,71 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-    <title>Show resume added</title>
-    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8"/>
-</head>
-<body>
-
-<p>You did successfully add your resume in our database</p>
-
-<h2>Result</h2>
-
-<h2>Basic information</h2>
-<th:block th:each="oneper:${person}">
-    <p th:text="'Your name:'+ ${oneper.name}"/>
-    <p th:text="'Your email:'+ ${oneper.email}" />
-</th:block>
-
-<h2>Education</h2>
-<th:block th:each="edu:${alledu}">
-    <p th:text="'Degreee:'+ ${edu.degree}"/>
-    <p th:text="'Your University:'+ ${edu.university}"/>
-    <p th:text="'Your Grduation Year:'+ ${edu.graduationYear}" />
-</th:block>
-
-<h2>Skills</h2>
-<th:block th:each="sk:${allskill}">
-    <p th:text="'Skill:'+ ${sk.skillname}"/>
-    <p th:text="'Skill rating:'+ ${sk.skillrating}"/>
-</th:block>
-
-<h2>Expereince</h2>
-<th:block th:each="exp:${allexp}">
-    <p th:text="'Title:'+ ${exp.title}"/>
-    <p th:text="'Your organization:'+ ${exp.organization}"/>
-    <p th:text="'Your start time:'+ ${exp.startTime}" />
-    <p th:text="'Your end time:'+ ${exp.endTime}"/>
-    <p th:text="'Your duty 1:'+ ${exp.duty1}"/>
-    <p th:text="'Your duty 2:'+ ${exp.duty2}" />
-</th:block>
-
-<div>
-    <a href="/addeducation">Add another education achievement</a><br/>
-    <a href="/addexperience">Add another experience</a><br/>
-    <a href="/addskill">Add another skill</a><br/>
-</div>
-
-</body>
-</html>
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h3>Choose what you need here</h3>
-
-            <p><a href="/adish" class="btn btn-dark btn-lg">Add dish</a></p>
-            <p><a href="/searchdish" class="btn btn-dark btn-lg">Search by dish</a></p>
-            <p><a href="/searchchef"class="btn btn-dark btn-lg">Search by Chef Name</a></p>
-            <p><a href="/displayall" class="btn btn-dark btn-lg">Display all Entry</a></p>
-        </div>
-    </div>
-</div>
-
-
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -114,13 +48,40 @@
             <div class="col-lg-12 text-center">
 
 
-                <h3 th:text="'Welcome: '+ ${newperson.name} + ', to our resume databse!'"/>
-                <p th:text="'Your email:'+ ${newperson.email}" />
+                <h2>Basic information</h2>
+                <th:block th:each="oneper:${person}">
+                    <p th:text="'Your name:'+ ${oneper.name}"/>
+                    <p th:text="'Your email:'+ ${oneper.email}" />
+                </th:block>
+
+                <h2>Education</h2>
+                <th:block th:each="edu:${alledu}">
+                    <p th:text="'Degreee:'+ ${edu.degree}"/>
+                    <p th:text="'Your University:'+ ${edu.university}"/>
+                    <p th:text="'Your Grduation Year:'+ ${edu.graduationYear}" />
+                </th:block>
+
+                <h2>Skills</h2>
+                <th:block th:each="sk:${allskill}">
+                    <p th:text="'Skill:'+ ${sk.skillname}"/>
+                    <p th:text="'Skill rating:'+ ${sk.skillrating}"/>
+                </th:block>
+
+                <h2>Expereince</h2>
+                <th:block th:each="exp:${allexp}">
+                    <p th:text="'Title:'+ ${exp.title}"/>
+                    <p th:text="'Your organization:'+ ${exp.organization}"/>
+                    <p th:text="'Your start time:'+ ${exp.startTime}" />
+                    <p th:text="'Your end time:'+ ${exp.endTime}"/>
+                    <p th:text="'Your duty 1:'+ ${exp.duty1}"/>
+                    <p th:text="'Your duty 2:'+ ${exp.duty2}" />
+                </th:block>
 
                 <div>
                     <p><a href="/addeducation" class="btn btn-dark btn-lg">Add an education achievement</a></p>
                     <p><a href="/addexperience" class="btn btn-dark btn-lg">Add an experience</a></p>
                     <p><a href="/addskill" class="btn btn-dark btn-lg">Add a skill</a></p>
+                    <p><a href="/displayall" class="btn btn-dark btn-lg">Show your profile</a></p>
                 </div>
 
 

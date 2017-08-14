@@ -1,35 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-    <title>Show resume added</title>
-    <meta http-equiv="Content-Type" content = "text/html; charset=UTF-8"/>
-</head>
-<body>
-<h1>Result</h1>
-<p>You did successfully add your Experience in our database</p>
-
-
-<h2>Expereince</h2>
-<p th:text="'Title:'+ ${newexperience.title}"/>
-<p th:text="'Your organization:'+ ${newexperience.organization}"/>
-<p th:text="'Your start time:'+ ${newexperience.startTime}" />
-<p th:text="'Your end time:'+ ${newexperience.endTime}"/>
-<p th:text="'Your duty 1:'+ ${newexperience.duty1}"/>
-<p th:text="'Your duty 2:'+ ${newexperience.duty2}" />
-
-<div>
-    <a href="/addeducation">Add an education achievement</a><br/>
-    <a href="/addexperience">Add another experience</a><br/>
-    <a href="/addskill">Add a skill</a><br/>
-    <a href="/displayall">Show your profile</a>
-</div>
-
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -77,14 +47,19 @@
         <div class="row">
             <div class="col-lg-12 text-center">
 
-
-                <h3 th:text="'Welcome: '+ ${newperson.name} + ', to our resume databse!'"/>
-                <p th:text="'Your email:'+ ${newperson.email}" />
+                <h3>Your experience:</h3> <br />
+                <p th:text="'Title:'+ ${newexperience.title}"/>
+                <p th:text="'Your organization:'+ ${newexperience.organization}"/>
+                <p th:text="'Your start time:'+ ${newexperience.startTime}" />
+                <p th:text="'Your end time:'+ ${newexperience.endTime}"/>
+                <p th:text="'Your duty 1:'+ ${newexperience.duty1}"/>
+                <p th:text="'Your duty 2:'+ ${newexperience.duty2}" />
 
                 <div>
                     <p><a href="/addeducation" class="btn btn-dark btn-lg">Add an education achievement</a></p>
                     <p><a href="/addexperience" class="btn btn-dark btn-lg">Add an experience</a></p>
                     <p><a href="/addskill" class="btn btn-dark btn-lg">Add a skill</a></p>
+                    <p><a href="/displayall" class="btn btn-dark btn-lg">Show your profile</a></p>
                 </div>
 
 

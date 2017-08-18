@@ -21,7 +21,12 @@ public class Person {
 
     @NotNull
     @Size(min=2)
-    private String name;
+    private String firstName;
+
+
+    @NotNull
+    @Size(min=2)
+    private String lastName;
 
     @Email
     private String email;
@@ -40,14 +45,6 @@ public class Person {
 
     public void setUuid(long uuid) {
         this.uuid = uuid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {
@@ -85,5 +82,19 @@ public class Person {
     }
 
 
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }

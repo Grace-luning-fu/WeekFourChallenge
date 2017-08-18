@@ -20,6 +20,9 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../static/css/stylish-portfolio.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,8 +53,10 @@
 
                 <h2>Basic information</h2>
                 <th:block th:each="oneper:${person}">
-                    <p th:text="'Your name: '+ ${oneper.name}"/>
+                    <p th:text="'Your name: '+ ${oneper.firstName} + ' ' + ${oneper.lastName}"/>
                     <p th:text="'Your email: '+ ${oneper.email}" />
+                    <p><a th:href="@{/updateper/{id}(id=${oneper.uuid})}">Update</a></p>
+                    <p><a th:href="@{/deleteper/{id}(id=${oneper.uuid})}">Delete</a></p>
                 </th:block>
 
                 <h2>Education</h2>
@@ -60,12 +65,16 @@
                     <p th:text="'Degreee: '+ ${edu.degree}"/>
                     <p th:text="'Your University: '+ ${edu.university}"/>
                     <p th:text="'Your Graduate Year: '+ ${edu.graduationYear}" />
+                    <p><a th:href="@{/updateedu/{id}(id=${edu.educationId})}">Update</a></p>
+                    <p><a th:href="@{/deleteedu/{id}(id=${edu.educationId})}">Delete</a></p>
                 </th:block>
 
 
                 <h2>Skills</h2>
                 <th:block th:each="sk:${allskill}">
                     <p th:text="'Skill: '+ ${sk.skillname} + ', ' + ${sk.skillrating}" />
+                    <p><a th:href="@{/updatesk/{id}(id=${sk.skillId})}">Update</a></p>
+                    <p><a th:href="@{/deletesk/{id}(id=${sk.skillId})}">Delete</a></p>
                 </th:block>
 
                 <h2>Expereince</h2>
@@ -75,6 +84,8 @@
                     <p th:text="'Your employment time: '+ ${exp.startTime} + ' - ' + ${exp.endTime}" />
                     <p th:text="'Your duty 1: '+ ${exp.duty1}"/>
                     <p th:text="'Your duty 2: '+ ${exp.duty2}" />
+                    <p><a th:href="@{/updateexp/{id}(id=${exp.experienceId})}">Update</a></p>
+                    <p><a th:href="@{/deleteexp/{id}(id=${exp.experienceId})}">Delete</a></p>
                 </th:block>
 
                 <div>

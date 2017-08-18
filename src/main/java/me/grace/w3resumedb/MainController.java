@@ -13,9 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -187,5 +185,58 @@ public class MainController {
         return "displayall";
 
     }
+
+
+    @RequestMapping("/updateper/{id}")
+    public String updateper(@PathVariable("id") long uuid, Model model){
+        model.addAttribute("newperson", personRepo.findOne(uuid));
+        return "addperson";
+    }
+
+    @RequestMapping("/deleteper/{id}")
+    public String delper(@PathVariable("id") long uuid){
+        personRepo.delete(uuid);
+        return "redirect:/displayall";
+    }
+
+
+    @RequestMapping("/updateedu/{id}")
+    public String updateedu(@PathVariable("id") long educationId, Model model){
+        model.addAttribute("neweducation", educationRepo.findOne(educationId));
+        return "addeducation";
+    }
+
+    @RequestMapping("/deleteedu/{id}")
+    public String deledu(@PathVariable("id") long id){
+        educationRepo.delete(id);
+        return "redirect:/displayall";
+    }
+
+
+    @RequestMapping("/updatesk/{id}")
+    public String updatesk(@PathVariable("id") long skillId, Model model){
+        model.addAttribute("newskill", skillRepo.findOne(skillId));
+        return "addskill";
+    }
+
+    @RequestMapping("/deletesk/{id}")
+    public String delsk(@PathVariable("id") long skillId){
+        skillRepo.delete(skillId);
+        return "redirect:/displayall";
+    }
+
+    @RequestMapping("/updateexp/{id}")
+    public String updateexp(@PathVariable("id") long experienceId, Model model){
+        model.addAttribute("newexperience", experienceRepo.findOne(experienceId));
+        return "addexperience";
+    }
+
+    @RequestMapping("/deleteexp/{id}")
+    public String delexp(@PathVariable("id") long experienceId){
+        experienceRepo.delete(experienceId);
+        return "redirect:/displayall";
+    }
+
+
 
 }
